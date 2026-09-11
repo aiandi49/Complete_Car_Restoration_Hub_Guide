@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Complete Car Restoration &amp; Detailing Hub Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --turquoise:#0DA9A6;
+    --aqua:#3FC7D6;
+    --seafoam:#3FBF9F;
+    --ocean:#0F6E92;
+    --deep-ocean:#0A4D68;
+    --ink:#0B3B45;
+    --paper:#FFFFFF;
+    --paper-soft:#F3FBFB;
+    --line:#DCEFEF;
+    --text:#123840;
+    --text-soft:#4C6E73;
+    --card-shadow: 0 18px 40px -22px rgba(10,77,104,0.35);
+    --radius-lg: 22px;
+    --radius-sm: 12px;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  [data-theme="dark"]{
+    --ink:#EAF7F7;
+    --paper:#062A32;
+    --paper-soft:#083640;
+    --line:#124953;
+    --text:#DCF3F3;
+    --text-soft:#9FC9CC;
+    --card-shadow: 0 18px 40px -18px rgba(0,0,0,0.55);
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%; overflow-x:hidden;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--text);
+    font-family:'Source Sans 3', system-ui, -apple-system, sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    transition:background .35s ease, color .35s ease;
+    text-align:center;
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', Georgia, serif;
+    color:var(--ink);
+    line-height:1.15;
+    margin:0 0 .5em;
+    font-weight:600;
+  }
+
+  p{ margin:0 0 1.1em; color:var(--text); }
+
+  a{ color:var(--ocean); }
+  [data-theme="dark"] a{ color:var(--aqua); }
+
+  img,svg{max-width:100%;}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    position:sticky;
+    top:0;
+    z-index:50;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding: calc(14px + var(--safe-top)) 20px 14px;
+    background:rgba(255,255,255,0.82);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  [data-theme="dark"] .topbar{ background:rgba(6,42,50,0.82); }
+
+  .brand{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.05rem;
+    color:var(--ink);
+    text-align:left;
+  }
+  .brand span{ color:var(--turquoise); }
+
+  .theme-toggle{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    border:1px solid var(--line);
+    background:var(--paper-soft);
+    color:var(--text);
+    border-radius:999px;
+    padding:8px 14px;
+    font-family:'Source Sans 3', sans-serif;
+    font-size:0.85rem;
+    font-weight:600;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .theme-toggle:focus-visible, a:focus-visible, button:focus-visible{
+    outline:2px solid var(--turquoise);
+    outline-offset:2px;
+  }
+  .theme-toggle .icon{ font-size:1rem; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 56px 22px 44px;
+    background:
+      radial-gradient(circle at 18% 15%, rgba(63,199,214,0.22), transparent 55%),
+      radial-gradient(circle at 82% 0%, rgba(63,191,159,0.20), transparent 50%),
+      var(--paper);
+  }
+  .hero .kicker{
+    color:var(--ocean);
+    font-weight:600;
+    font-size:0.95rem;
+    letter-spacing:0.02em;
+    margin-bottom:14px;
+  }
+  [data-theme="dark"] .hero .kicker{ color:var(--aqua); }
+  .hero h1{
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    max-width:16ch;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .hero p.lede{
+    max-width:52ch;
+    margin:18px auto 0;
+    font-size:1.08rem;
+    color:var(--text-soft);
+  }
+
+  /* ---------- Container ---------- */
+  .wrap{ max-width:760px; margin:0 auto; padding:0 22px; }
+
+  /* ---------- TOC ---------- */
+  .toc{
+    margin: 36px auto 8px;
+    background:var(--paper-soft);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    padding:26px 22px;
+    box-shadow:var(--card-shadow);
+    text-align:left;
+  }
+  .toc h2{ font-size:1.2rem; text-align:center; margin-bottom:16px;}
+  .toc ol{
+    margin:0;
+    padding-left:1.3em;
+    columns: 1;
+    color:var(--text);
+  }
+  .toc li{ margin-bottom:10px; }
+  .toc a{ text-decoration:none; font-weight:600; }
+  .toc a:hover{ text-decoration:underline; }
+
+  /* ---------- Sections ---------- */
+  section.chapter{
+    padding:52px 0 8px;
+    border-top:1px solid var(--line);
+    scroll-margin-top:90px;
+  }
+  section.chapter:first-of-type{ border-top:none; }
+
+  .chapter-num{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--turquoise), var(--seafoam));
+    color:#fff;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1rem;
+    margin-bottom:14px;
+  }
+
+  section.chapter h2{ font-size:clamp(1.5rem, 4vw, 2.05rem); }
+  section.chapter h3{
+    font-size:1.2rem;
+    margin-top:28px;
+    text-align:center;
+  }
+
+  section.chapter p, section.chapter > .lede{
+    text-align:center;
+    max-width:62ch;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  /* lists stay left-aligned everywhere, per spec */
+  ul, ol.steps{
+    text-align:left;
+    max-width:62ch;
+    margin:0 auto 1.3em;
+    padding-left:1.3em;
+    color:var(--text);
+  }
+  ol.steps{ padding-left:1.5em; }
+  ul li, ol.steps li{ margin-bottom:8px; }
+
+  strong{ color:var(--ink); }
+
+  /* ---------- Table (becomes stacked cards on mobile) ---------- */
+  .compare-table{ margin:24px 0; }
+  .compare-table table{
+    width:100%;
+    border-collapse:collapse;
+    display:none;
+  }
+  .compare-cards{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    text-align:left;
+  }
+  .compare-card{
+    background:var(--paper-soft);
+    border:1px solid var(--line);
+    border-radius:var(--radius-sm);
+    padding:18px 18px;
+    box-shadow:var(--card-shadow);
+  }
+  .compare-card h4{
+    font-family:'Fraunces', serif;
+    font-size:1.05rem;
+    margin:0 0 10px;
+    color:var(--turquoise-text, var(--deep-ocean));
+    color:var(--ink);
+  }
+  .compare-card dl{ margin:0; }
+  .compare-card dt{
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    color:var(--text-soft);
+    margin-top:10px;
+  }
+  .compare-card dt:first-of-type{ margin-top:0; }
+  .compare-card dd{ margin:2px 0 0; color:var(--text); }
+
+  /* ---------- Callout / caveat box ---------- */
+  .callout{
+    background:var(--paper-soft);
+    border-left:4px solid var(--seafoam);
+    border-radius:var(--radius-sm);
+    padding:18px 20px;
+    margin:22px auto;
+    max-width:62ch;
+    text-align:left;
+    box-shadow:var(--card-shadow);
+  }
+  .callout p:last-child{ margin-bottom:0; }
+  .callout .callout-label{
+    display:block;
+    font-weight:700;
+    color:var(--deep-ocean);
+    margin-bottom:6px;
+    font-family:'Fraunces', serif;
+  }
+  [data-theme="dark"] .callout .callout-label{ color:var(--aqua); }
+
+  /* ---------- Sequence steps ---------- */
+  .sequence{
+    counter-reset: seq;
+    list-style:none;
+    padding-left:0;
+    max-width:62ch;
+    margin:24px auto;
+    text-align:left;
+  }
+  .sequence li{
+    counter-increment: seq;
+    position:relative;
+    padding:14px 18px 14px 56px;
+    margin-bottom:12px;
+    background:var(--paper-soft);
+    border-radius:var(--radius-sm);
+    border:1px solid var(--line);
+  }
+  .sequence li::before{
+    content: counter(seq);
+    position:absolute;
+    left:14px;
+    top:50%;
+    transform:translateY(-50%);
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--ocean), var(--turquoise));
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    font-size:0.9rem;
+    font-family:'Fraunces', serif;
+  }
+
+  /* ---------- Checklist grid ---------- */
+  .checklist-grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:18px;
+    margin:28px auto;
+    text-align:left;
+  }
+  .checklist-card{
+    background:var(--paper-soft);
+    border:1px solid var(--line);
+    border-radius:var(--radius-sm);
+    padding:18px 20px;
+    box-shadow:var(--card-shadow);
+  }
+  .checklist-card h4{
+    font-family:'Fraunces', serif;
+    margin:0 0 10px;
+    font-size:1.05rem;
+    color:var(--ink);
+  }
+  .checklist-card ul{ margin:0; padding-left:1.2em; max-width:none;}
+
+  /* ---------- Footer note ---------- */
+  .footnote{
+    margin:50px auto 60px;
+    max-width:56ch;
+    color:var(--text-soft);
+    font-size:0.92rem;
+    font-style:italic;
+    padding-bottom: var(--safe-bottom);
+  }
+
+  /* ---------- Tablet / Desktop enhancements ---------- */
+  @media (min-width: 760px){
+    body{ text-align:left; }
+    .hero{ text-align:center; }
+    .wrap{ padding:0 32px; }
+
+    section.chapter p, section.chapter > .lede,
+    section.chapter h3{ text-align:left; margin-left:0; }
+
+    .toc ol{ columns:2; column-gap:32px; }
+
+    .compare-table table{ display:table; }
+    .compare-cards{ display:none; }
+
+    .compare-table table{
+      border-radius:var(--radius-sm);
+      overflow:hidden;
+      box-shadow:var(--card-shadow);
+    }
+    .compare-table th, .compare-table td{
+      border:1px solid var(--line);
+      padding:14px 16px;
+      text-align:left;
+      vertical-align:top;
+      font-size:0.95rem;
+    }
+    .compare-table thead th{
+      background:linear-gradient(135deg, var(--ocean), var(--turquoise));
+      color:#fff;
+      font-family:'Fraunces', serif;
+      font-weight:600;
+    }
+    .compare-table tbody tr:nth-child(even){ background:var(--paper-soft); }
+
+    .checklist-grid{ grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 1080px){
+    .hero{ padding:80px 22px 60px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Restoration <span>Hub</span></div>
+  <button class="theme-toggle" id="themeToggle" aria-pressed="false">
+    <span class="icon" id="themeIcon">🌙</span>
+    <span id="themeLabel">Dark mode</span>
+  </button>
+</div>
+
+<header class="hero">
+  <div class="kicker">A working reference, start to finish</div>
+  <h1>The Complete Car Restoration &amp; Detailing Hub Guide</h1>
+  <p class="lede">Everything from a two-bucket wash to full mechanical and cosmetic rebuilds — in the order that actually makes sense to do it.</p>
+</header>
+
+<div class="wrap">
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>In this guide</h2>
+    <ol>
+      <li><a href="#paint-shine">Exterior Paint &amp; Shine</a></li>
+      <li><a href="#exterior-detail">Full Exterior Detailing</a></li>
+      <li><a href="#interior-detail">Full Interior Detailing</a></li>
+      <li><a href="#mechanical">Mechanical Restoration</a></li>
+      <li><a href="#cosmetic">Cosmetic Bodywork Restoration</a></li>
+      <li><a href="#sequencing">Project Sequencing</a></li>
+      <li><a href="#marketing">Spotting Inflated Marketing Claims</a></li>
+      <li><a href="#checklist">Tools &amp; Supplies Checklist</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1. Paint & Shine -->
+  <section class="chapter" id="paint-shine">
+    <span class="chapter-num">1</span>
+    <h2>Exterior Paint &amp; Shine</h2>
+    <p class="lede">Before buying anything, it helps to know what you're actually choosing between. Wax, sealant, and ceramic coating get marketed as interchangeable — they aren't, and they last for very different lengths of time.</p>
+
+    <h3>Wax vs. sealant vs. ceramic coating</h3>
+    <div class="compare-table">
+      <table>
+        <thead>
+          <tr><th></th><th>What it is</th><th>How it works</th><th>Typical lifespan</th><th>Best for</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Carnauba wax</strong></td>
+            <td>Natural wax, often blended with oils</td>
+            <td>Sits on top of the clear coat as a sacrificial layer</td>
+            <td>4–8 weeks</td>
+            <td>Warm, deep shine on darker cars; easy to apply by hand</td>
+          </tr>
+          <tr>
+            <td><strong>Paint sealant</strong></td>
+            <td>Synthetic polymer</td>
+            <td>Bonds more tightly than wax but still sits on the surface</td>
+            <td>3–6 months</td>
+            <td>Daily drivers that need decent protection without much fuss</td>
+          </tr>
+          <tr>
+            <td><strong>Ceramic coating</strong> (SiO2-based)</td>
+            <td>Liquid silica/glass polymer</td>
+            <td>Cures into a hard, semi-permanent layer bonded to the clear coat</td>
+            <td>1–5 years professional / 6–12 months DIY spray</td>
+            <td>Long-term protection and hydrophobic beading; best after paint correction</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="compare-cards">
+        <div class="compare-card">
+          <h4>Carnauba wax</h4>
+          <dl>
+            <dt>What it is</dt><dd>Natural wax, often blended with oils</dd>
+            <dt>How it works</dt><dd>Sits on top of the clear coat as a sacrificial layer</dd>
+            <dt>Typical lifespan</dt><dd>4–8 weeks</dd>
+            <dt>Best for</dt><dd>Warm, deep shine on darker cars; easy to apply by hand</dd>
+          </dl>
+        </div>
+        <div class="compare-card">
+          <h4>Paint sealant</h4>
+          <dl>
+            <dt>What it is</dt><dd>Synthetic polymer</dd>
+            <dt>How it works</dt><dd>Bonds more tightly than wax but still sits on the surface</dd>
+            <dt>Typical lifespan</dt><dd>3–6 months</dd>
+            <dt>Best for</dt><dd>Daily drivers that need decent protection without much fuss</dd>
+          </dl>
+        </div>
+        <div class="compare-card">
+          <h4>Ceramic coating (SiO2-based)</h4>
+          <dl>
+            <dt>What it is</dt><dd>Liquid silica/glass polymer</dd>
+            <dt>How it works</dt><dd>Cures into a hard, semi-permanent layer bonded to the clear coat</dd>
+            <dt>Typical lifespan</dt><dd>1–5 years professional / 6–12 months DIY spray</dd>
+            <dt>Best for</dt><dd>Long-term protection and hydrophobic beading; best after paint correction</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">Worth knowing</span>
+      <p>No spray-on product removes swirl marks, scratches, or oxidation. If the paint is already dull or scratched, that has to be corrected before any coating goes on — the coating locks in whatever's already there.</p>
+      <p>Consumer "ceramic spray" products sold in bottles are real chemistry, but diluted and far less durable than professional application. Months of protection is realistic; multi-year "permanent" claims usually aren't.</p>
+    </div>
+
+    <h3>Paint correction, before any wax, sealant, or coating</h3>
+    <ol class="steps">
+      <li><strong>Wash and decontaminate first</strong> — you can't correct paint with embedded grit still on it without adding new scratches.</li>
+      <li><strong>Assess the damage</strong> in direct sunlight: light swirls, deeper scratches, and oxidation (chalky, faded paint) each need a different level of correction.</li>
+      <li><strong>Clay bar</strong> the paint to pull embedded contaminants — tar, rail dust, overspray — out of the clear coat, using a clay lubricant, never dry.</li>
+      <li><strong>Polish or compound</strong> with a dual-action polisher: a fine finishing polish for light swirls, a cutting compound followed by a finishing pass for deeper scratches or oxidation.</li>
+      <li><strong>Wipe down with isopropyl alcohol</strong> to remove polishing oils — leftover oil stops wax, sealant, or coating from bonding properly.</li>
+      <li><strong>Apply your chosen protection</strong> in thin, even coats, following that product's specific cure and buff time.</li>
+    </ol>
+
+    <h3>Realistic maintenance</h3>
+    <ul>
+      <li>Wash every 1–2 weeks so contaminants don't bond to whatever protection layer is on there.</li>
+      <li>Top up wax every 4–8 weeks, sealant every few months.</li>
+      <li>Ceramic coatings benefit from a "booster" spray every few washes to refresh hydrophobicity — the base coating itself doesn't need reapplying for years.</li>
+    </ul>
+  </section>
+
+  <!-- 2. Exterior Detailing -->
+  <section class="chapter" id="exterior-detail">
+    <span class="chapter-num">2</span>
+    <h2>Full Exterior Detailing</h2>
+
+    <h3>The safe wash method (two-bucket method)</h3>
+    <ol class="steps">
+      <li>Rinse the whole car first to knock off loose dirt before touching it with anything.</li>
+      <li>Use two buckets, each fitted with a grit guard: one with soapy water, one with plain rinse water.</li>
+      <li>Wash top-down in straight lines, not circles, with a microfiber wash mitt — dunk and rinse the mitt before reloading with soap so you're not grinding dirt back into the paint.</li>
+      <li>Dry with a large microfiber towel or a leaf blower / air dryer to avoid water spots and micro-scratches from dragging cloth.</li>
+    </ol>
+
+    <h3>Wheels &amp; tires</h3>
+    <ul>
+      <li>Wheels first, before the body — brake dust is acidic and abrasive.</li>
+      <li>Use a wheel-safe cleaner matched to your wheel finish; some acidic cleaners damage certain coatings or chrome.</li>
+      <li>Use a separate mitt and bucket for wheels — never the one used on paint.</li>
+      <li>Dress tires with a water-based, not solvent-based, dressing for a natural satin finish that won't sling onto paint or fade to brown or orange over time.</li>
+    </ul>
+
+    <h3>Trim, glass &amp; headlights</h3>
+    <ul>
+      <li>Faded black plastic trim: clean thoroughly, then use a dedicated trim restorer or coating rather than a generic dressing, which fades fast.</li>
+      <li>Glass: a dedicated glass cleaner — ammonia-free if you have tint — and a separate microfiber towel, so paint-towel residue doesn't streak it.</li>
+      <li>Oxidized, yellowed headlights: wet-sand progressively from around 800 grit up to 3000+, polish, then finish with a UV-resistant clear coat — polishing alone without a UV topcoat lets them yellow again within months.</li>
+    </ul>
+  </section>
+
+  <!-- 3. Interior Detailing -->
+  <section class="chapter" id="interior-detail">
+    <span class="chapter-num">3</span>
+    <h2>Full Interior Detailing</h2>
+    <p class="lede">Work top to bottom and dry to wet — vacuum before anything wet touches a surface.</p>
+
+    <ol class="steps">
+      <li>Remove trash and personal items; pull the floor mats out.</li>
+      <li>Vacuum everything first — seats, carpets, under seats, trunk — so you're not grinding grit into upholstery later.</li>
+      <li>Dust and wipe hard surfaces: dashboard, console, door panels, vents (a soft detailing brush works well in vents and crevices).</li>
+      <li>Clean glass from the inside with an ammonia-free cleaner if tinted.</li>
+    </ol>
+
+    <h3>Upholstery &amp; carpets</h3>
+    <ul>
+      <li><strong>Cloth seats and carpets:</strong> a dedicated fabric cleaner, agitated with a soft brush, extracted with a wet/dry vacuum rather than left to air-dry soaked — that's what causes a mildew smell.</li>
+      <li><strong>Leather seats:</strong> a pH-balanced leather cleaner, not an all-purpose interior cleaner which can strip the finish, followed by a conditioner every 1–3 months depending on climate and sun exposure.</li>
+      <li><strong>Stains:</strong> treat as soon as possible, blot rather than rub, and test any cleaner on a hidden area first.</li>
+    </ul>
+
+    <h3>Plastics &amp; dashboard</h3>
+    <p>Avoid high-gloss "tire shine"-style dressings on the dashboard — they attract dust and can cause windshield glare in sunlight. A satin-finish, water-based interior UV protectant works better.</p>
+
+    <h3>Odor removal</h3>
+    <p>Find and remove the source first — spilled food, mildew, smoke residue — since sprays and fresheners only mask odor. An ozone treatment or enzymatic odor eliminator actually breaks down the bacteria causing it; air freshener alone won't solve a persistent smell.</p>
+  </section>
+
+  <!-- 4. Mechanical Restoration -->
+  <section class="chapter" id="mechanical">
+    <span class="chapter-num">4</span>
+    <h2>Mechanical Restoration</h2>
+    <p class="lede">This is the part that determines whether the car is actually safe to drive — cosmetic work should never substitute for it on a car you intend to drive regularly.</p>
+
+    <h3>Fluids &amp; filters</h3>
+    <ul>
+      <li>Engine oil and filter, transmission fluid, coolant, brake fluid, power steering fluid — check condition and age, not just level. Dark or contaminated fluid gets flushed even if the level looks fine.</li>
+      <li>Replace the air filter and cabin air filter — cheap, and it directly affects performance and interior air quality.</li>
+    </ul>
+
+    <h3>Brakes &amp; suspension</h3>
+    <ul>
+      <li>Inspect brake pads, rotors, and lines for wear, cracking, or leaks.</li>
+      <li>Check shocks, struts, bushings, and ball joints for play or leaks — worn suspension affects handling and tire wear even when the ride "feels fine."</li>
+      <li>Check tire condition, age, and alignment. Tires over roughly six years old should be inspected regardless of tread depth, since rubber degrades with age.</li>
+    </ul>
+
+    <h3>Electrical</h3>
+    <ul>
+      <li>Clean corrosion off battery terminals and check charge and load capacity.</li>
+      <li>Check every light — headlights, tail lights, turn signals, brake lights. Cheap fix, safety-critical.</li>
+      <li>Run an OBD-II scan for dashboard warning lights before doing any cosmetic work — an active check-engine or ABS light needs addressing first.</li>
+    </ul>
+
+    <h3>Undercarriage &amp; rust</h3>
+    <p>Inspect the undercarriage, wheel wells, and frame rails for surface rust versus structural rust. Surface rust can be treated; structural or perforating rust needs a body shop or fabrication assessment before the car is trusted on the road. Apply a rust inhibitor or undercoating after treatment, especially in climates with road salt.</p>
+  </section>
+
+  <!-- 5. Cosmetic Bodywork -->
+  <section class="chapter" id="cosmetic">
+    <span class="chapter-num">5</span>
+    <h2>Cosmetic Bodywork Restoration</h2>
+
+    <h3>Dents &amp; dings</h3>
+    <ul>
+      <li>Small dents with no paint damage: paintless dent repair (PDR) is the least invasive option and preserves factory paint.</li>
+      <li>Dents with cracked or chipped paint: need traditional bodywork — filler, sanding, primer, paint — since PDR can't fix broken paint.</li>
+    </ul>
+
+    <h3>Rust repair</h3>
+    <ol class="steps">
+      <li>Grind back to clean, solid metal — all of the rust, not just the visible flaking.</li>
+      <li>Treat bare metal with a rust converter, or weld in patch panels if the rust has eaten through.</li>
+      <li>Prime with an etching primer made for bare metal.</li>
+      <li>Fill, sand, and blend into the surrounding panels before paint.</li>
+    </ol>
+
+    <h3>Paint &amp; repaint</h3>
+    <p>Small chips: touch-up paint matched to your VIN's paint code, found on a door-jamb sticker, applied in thin layers and leveled. Full panel or full-car repaint: color-matching, paint type, and booth conditions matter enormously — this is where DIY and professional results diverge the most, so get quotes from a body shop if the car has real value to you.</p>
+
+    <h3>Trim &amp; chrome restoration</h3>
+    <p>Faded chrome: a dedicated chrome or metal polish — pitted chrome usually needs re-chroming rather than polishing. Faded plastic trim: light sanding, then a trim restorer or dye made for exterior plastic, not interior dressing.</p>
+
+    <h3>Interior trim &amp; upholstery restoration</h3>
+    <p>Cracked dash or door panels can often be fixed with a vinyl/plastic crack repair kit, or full panel replacement for severe cases. Torn upholstery is best handled with professional reupholstering or seat covers matched to the original material for resale value.</p>
+  </section>
+
+  <!-- 6. Sequencing -->
+  <section class="chapter" id="sequencing">
+    <span class="chapter-num">6</span>
+    <h2>Project Sequencing</h2>
+    <p class="lede">On a full restoration, order matters — cosmetic work done before mechanical or structural work just gets redone later.</p>
+
+    <ol class="sequence">
+      <li><strong>Mechanical safety first:</strong> brakes, suspension, fluids, electrical, tires. Don't spend on paint for a car you can't safely drive yet.</li>
+      <li><strong>Structural and rust repair:</strong> fix anything affecting body integrity before bodywork or paint goes on top of it.</li>
+      <li><strong>Bodywork:</strong> dent repair, panel replacement, filler and sanding.</li>
+      <li><strong>Paint:</strong> primer, base coat, clear coat, or a professional respray.</li>
+      <li><strong>Correction and protection:</strong> polish, then wax, sealant, or ceramic coating, once paint has fully cured — professional paint typically needs 30+ days before polishing or coating.</li>
+      <li><strong>Interior restoration:</strong> upholstery, trim, electronics.</li>
+      <li><strong>Final detail pass:</strong> the full wash, wheels, glass, and interior detail from Sections 2 and 3 — done last so it isn't undone by messier earlier work.</li>
+    </ol>
+  </section>
+
+  <!-- 7. Marketing claims -->
+  <section class="chapter" id="marketing">
+    <span class="chapter-num">7</span>
+    <h2>How to Spot Inflated Marketing Claims</h2>
+    <p class="lede">Worth keeping in mind while shopping for any of the products above — car-care marketing, spray coatings especially, leans on a few recurring patterns.</p>
+
+    <ul>
+      <li><strong>Invented-sounding proprietary technology names</strong> that aren't independent, verifiable chemistry terms — they're trademarked marketing language, not a claim you can check against a standard.</li>
+      <li><strong>Anonymous or first-name-only testimonials</strong> with no way to verify they're real customers.</li>
+      <li><strong>News-style article formatting</strong> for what's actually a paid ad — a real news article doesn't have a "Check Availability" button on every scroll.</li>
+      <li><strong>Before/after photos</strong> shot in different lighting, angles, or wetness, which exaggerates the visible difference.</li>
+      <li><strong>Comparisons only against the worst-case alternative</strong> — "hours of waxing" versus "two minutes" — rather than a fair equivalent product.</li>
+    </ul>
+
+    <div class="callout">
+      <span class="callout-label">The takeaway</span>
+      <p>None of this means the product is necessarily useless — spray sealants and consumer ceramic sprays are real categories that do work to some degree. It just means the durability and performance numbers in an ad aren't tested fact. Check independent reviews — enthusiast forums, detailers who test multiple brands side by side — before buying.</p>
+    </div>
+  </section>
+
+  <!-- 8. Checklist -->
+  <section class="chapter" id="checklist">
+    <span class="chapter-num">8</span>
+    <h2>Tools &amp; Supplies Checklist</h2>
+
+    <div class="checklist-grid">
+      <div class="checklist-card">
+        <h4>Washing</h4>
+        <ul>
+          <li>Two buckets + grit guards</li>
+          <li>pH-neutral car wash soap</li>
+          <li>Microfiber wash mitt (separate one for wheels)</li>
+          <li>Microfiber drying towels</li>
+        </ul>
+      </div>
+      <div class="checklist-card">
+        <h4>Paint correction &amp; protection</h4>
+        <ul>
+          <li>Clay bar + clay lubricant</li>
+          <li>Dual-action polisher</li>
+          <li>Cutting compound + finishing polish</li>
+          <li>Isopropyl alcohol panel wipe</li>
+          <li>Wax, sealant, or ceramic coating</li>
+        </ul>
+      </div>
+      <div class="checklist-card">
+        <h4>Wheels, tires &amp; trim</h4>
+        <ul>
+          <li>Wheel-safe cleaner</li>
+          <li>Soft-bristle, wheel-safe brush</li>
+          <li>Water-based tire dressing</li>
+          <li>Trim restorer</li>
+        </ul>
+      </div>
+      <div class="checklist-card">
+        <h4>Interior</h4>
+        <ul>
+          <li>Vacuum with brush attachment</li>
+          <li>Soft detailing brushes</li>
+          <li>Upholstery/fabric cleaner</li>
+          <li>pH-balanced leather cleaner + conditioner</li>
+          <li>Ammonia-free glass cleaner</li>
+          <li>Water-based interior UV protectant</li>
+        </ul>
+      </div>
+      <div class="checklist-card">
+        <h4>Mechanical</h4>
+        <ul>
+          <li>OBD-II scanner</li>
+          <li>Oil, coolant, brake fluid, power steering fluid</li>
+          <li>Torque wrench</li>
+          <li>Jack + jack stands</li>
+        </ul>
+      </div>
+      <div class="checklist-card">
+        <h4>Bodywork</h4>
+        <ul>
+          <li>Rust converter / etching primer</li>
+          <li>Body filler + progressive-grit sanding blocks</li>
+          <li>Touch-up paint matched to VIN paint code</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <p class="footnote">This guide is general reference information, not a substitute for a qualified mechanic or body shop assessment — especially for anything involving brakes, suspension, structural rust, or frame integrity.</p>
+
+</div>
+
+<script>
+  (function(){
+    var root = document.documentElement;
+    var toggle = document.getElementById('themeToggle');
+    var icon = document.getElementById('themeIcon');
+    var label = document.getElementById('themeLabel');
+
+    function apply(theme){
+      if(theme === 'dark'){
+        root.setAttribute('data-theme','dark');
+        icon.textContent = '☀️';
+        label.textContent = 'Light mode';
+        toggle.setAttribute('aria-pressed','true');
+      } else {
+        root.removeAttribute('data-theme');
+        icon.textContent = '🌙';
+        label.textContent = 'Dark mode';
+        toggle.setAttribute('aria-pressed','false');
+      }
+    }
+
+    var stored = null;
+    try { stored = localStorage.getItem('restoration-hub-theme'); } catch(e) {}
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    apply(stored ? stored : (prefersDark ? 'dark' : 'light'));
+
+    toggle.addEventListener('click', function(){
+      var isDark = root.getAttribute('data-theme') === 'dark';
+      var next = isDark ? 'light' : 'dark';
+      apply(next);
+      try { localStorage.setItem('restoration-hub-theme', next); } catch(e) {}
+    });
+  })();
+</script>
+
+</body>
+</html>
